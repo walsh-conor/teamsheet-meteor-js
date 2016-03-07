@@ -1,0 +1,23 @@
+<template name="layout">
+
+<div class="container">
+    <header>
+      <h1>TeamSheet</h1>
+
+       {{> loginButtons}}
+       {{> menu}}
+
+	<!--  {{> loginButtons}} 
+ {{#if currentUser}} 
+ {{/if}} -->
+	  
+	     {{>addFixture}}
+	 
+    </header>
+
+  {{> yield}}
+
+  </div>
+
+
+</template>

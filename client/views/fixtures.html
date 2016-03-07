@@ -1,0 +1,20 @@
+<template name="fixtures">
+  <h3>Fixtures</h3>
+  <ul>
+    {{#each fixtures}}
+      {{> fixture}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="addFixture">
+ <form class="new-fixture">
+        <input type="text" name="team1" placeholder="Team1" />
+		<input type="text" name="team2" placeholder="Team2" />
+		<input type="text" name="date" placeholder="Date" />
+		<input type="text" name="time" placeholder="Time" />
+		<input type="text" name="venue" placeholder="Venue" />		
+		<input type="text" name="info" placeholder="Details" />
+		<button><input type="submit" value="submit"></button>
+      </form>
+</template>
