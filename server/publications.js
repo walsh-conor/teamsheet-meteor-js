@@ -3,5 +3,5 @@ Meteor.publish('teams', function() {
 });
 
 Meteor.publish('fixtures', function() {
-  return Fixtures.find({}, {sort: {date: -1}});
+  return Fixtures.find({}, {sort: {date: 1}});
 });

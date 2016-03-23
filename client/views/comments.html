@@ -1,0 +1,17 @@
+<template name="comments">
+
+     <h3>Comment Section</h3>
+     <ul>
+	    {{#each comments}}
+	      {{> comment}}
+	    {{/each}}
+     </ul>
+
+</template>
+
+<template name="addComment">
+ <form class="new-comment">
+        <input type="text" name="commentText" placeholder="Enter Comment...." required />
+		<button><input type="submit" value="submit"></button>
+      </form>
+</template>

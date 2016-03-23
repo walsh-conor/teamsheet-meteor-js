@@ -49,6 +49,19 @@ if (Fixtures.find().count() === 0) {
     if (! Meteor.userId()) {
       throw new Meteor.Error("not logged in");
     }
+
+    var comments = [
+      {
+        commentOwner: 'Conor Walsh',
+        commentText: 'Going to be a great game',
+        commentDate: '12/03/2016'
+      },
+      {
+        commentOwner: 'Niamh Kelly',
+        commentText: 'Yes it is!',
+        commentDate: '13/03/2016'
+      }
+      ];
  
     Fixtures.insert({
         team1: team1,
@@ -59,6 +72,7 @@ if (Fixtures.find().count() === 0) {
         info: info,
         t1score: '--.--',
         t2score: '--.--',
+        comments:comments,
         t1players: t1players,
         t2players: t2players,
         createdAt: new Date(), // current time
