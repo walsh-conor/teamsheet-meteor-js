@@ -1,5 +1,3 @@
 Template.teams.helpers({
-  teams: function() {
-    return Teams.find();
-  }
+  tsUsers: Meteor.users.find()
 });

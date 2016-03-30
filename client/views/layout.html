@@ -1,18 +1,8 @@
 <template name="layout">
 
+       {{>Nav}}
 <div class="container">
-    <header>
-      <h1>TeamSheet</h1>
-
-       {{> loginButtons}}
-       {{> menu}}
-
-	<!--  {{> loginButtons}} 
- {{#if currentUser}} 
- {{/if}} -->
-	  
-	     {{>addFixture}}
-	 
+    <header>	 
     </header>
 
   {{> yield}}

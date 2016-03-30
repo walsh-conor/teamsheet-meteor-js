@@ -1,15 +1,3 @@
-if (Teams.find().count() === 0) {
-  [
-    {
-      name: 'Clonea'
-    }, {
-      name: 'Portlaw'
-    }
-  ].forEach(function(data) {
-    return Teams.insert(data);
-  });
-}
-
 if (Fixtures.find().count() === 0) {
   fixture = {
     team1: 'Clonea',
@@ -86,5 +74,14 @@ if (Fixtures.find().count() === 0) {
       throw new Meteor.Error("not logged in");
     }
     Fixtures.remove(fixtureId);
+  },
+  editFixture: function (fixtureId, team1, team2, venue, date, time, info, t1players, t2players) {
+    // Make sure the user is logged in before inserting a task
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not logged in");
+    }
+
+      Fixtures.update(fixtureId, {$set: {team1: team1, team2: team2, venue: venue, date: date, time: time, info: info, t1players: t1players, t2players: t2players} });
+    
   }
 });

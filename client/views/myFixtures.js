@@ -1,5 +1,3 @@
-Template.fixtures.helpers({
-    myFixtures: function(){
-        return Fixtures.find({owner: this.userId}, {sort: {date: 1}});
-    }
+Template.myFixtures.helpers({
+  myFixtures: Fixtures.find({owner: Meteor.userId()}, {sort: {date: -1}})
 });
