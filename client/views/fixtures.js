@@ -64,11 +64,9 @@ Template.editFixture.events({
       var venue = event.target.venue.value;
       var time = event.target.time.value;
       var info = event.target.info.value;
-      var t1players = [];
-      var t2players = [];
 
     // Insert a coffee into the collection
-     Meteor.call("editFixture", fixtureToEdit, team1, team2, venue, date, time, info, t1players, t2players);
+     Meteor.call("editFixture", fixtureToEdit, team1, team2, venue, date, time, info);
       
       // Clear form
       event.target.team1.value = "";

@@ -1,15 +1,20 @@
 <template name="fixture">
   <li>
      <a href="/fixture/{{_id}}"><b>{{team1}}</b> V <b>{{team2}}</b></a> <br> {{venue}}, {{date}}, {{time}}
+     <br> <br> 
   </li>
 </template>
 
 
 <template name="oneFixture">
 
-     <b>{{team1}}</b> V <b>{{team2}}</b> <br> {{venue}}, {{date}}, {{time}}
+     <h3><b>{{team1}}</b> V <b>{{team2}}</b></h3> 
+     <br> Venue: {{venue}} 
+     <br> Date: {{date}} 
+     <br> Time: {{time}}
      <br> <br> {{info}}
       <br><br>
+      {{team1}} Players = {{t1players}}
 
       {{>comments}}
       {{>addComment}}

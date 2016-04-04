@@ -8,24 +8,8 @@ if (Fixtures.find().count() === 0) {
     t1score: '--.--',
     t2score: '--.--',
     info: 'Intermediate Semi-Final',
-    t1players:[
-      {
-        num: 1,
-        name: 'Conor Walsh'
-      },
-      {
-        num: 2,
-        name: 'Liam Walsh'
-      }
-      ],
-    t2players:[
-    {
-        num: 11,
-        name: 'John Power'},
-      {
-        num: 22,
-        name: 'Sean Power'
-      }]
+    t1players:[],
+    t2players:[]
   };
   Fixtures.insert(fixture);
 }
@@ -75,13 +59,22 @@ if (Fixtures.find().count() === 0) {
     }
     Fixtures.remove(fixtureId);
   },
-  editFixture: function (fixtureId, team1, team2, venue, date, time, info, t1players, t2players) {
+  editFixture: function (fixtureId, team1, team2, venue, date, time, info) {
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error("not logged in");
     }
 
-      Fixtures.update(fixtureId, {$set: {team1: team1, team2: team2, venue: venue, date: date, time: time, info: info, t1players: t1players, t2players: t2players} });
+      Fixtures.update(fixtureId, {$set: {team1: team1, team2: team2, venue: venue, date: date, time: time, info: info} });
+    
+  },
+  editPlayers: function (fixtureId, t1players, t2players) {
+    // Make sure the user is logged in before inserting a task
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not logged in");
+    }
+
+      Fixtures.update(fixtureId, {$set: {t1players: t1players, t2players: t2players} });
     
   }
 });
