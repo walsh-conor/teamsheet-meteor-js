@@ -24,3 +24,5 @@ cfs:gridfs
 cfs:standard-packages
 matdutour:popup-confirm
 twbs:bootstrap
+alanning:roles
+matteodem:easy-search

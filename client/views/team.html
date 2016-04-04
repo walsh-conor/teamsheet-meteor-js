@@ -1,5 +1,15 @@
 <template name="tsUser">
   <li>
-     Name; <b>{{profile.name}}</b>, Username; <b>{{services.twitter.screenName}}</b>
+     <a href="/user/{{_id}}"><img src={{services.twitter.profile_image_url}} alt='profile image'> <b>{{services.twitter.screenName}}</b></a>
+     <br>
+     <br>
   </li>
+</template>
+
+
+<template name="oneUser">
+<h1><img src={{services.twitter.profile_image_url}} alt='profile image'> {{services.twitter.screenName}} </h1>
+ Name :  <b>{{profile.name}}</b>
+
+  
 </template>
