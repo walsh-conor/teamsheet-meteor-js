@@ -32,8 +32,8 @@ Template.editPlayers.events({
         console.log($td);
                 return {
                          id: ++i,
-                         number: $td.eq(0).text(),
-                         name: $td[1].text(),
+                         number: $td.eq(0).val(),
+                         name: $td.eq(0).val(),
                          position: $td.eq(2).text(),
                          age: $td.eq(3).text() ,
                          height: $td.eq(4).text()             
