@@ -49,7 +49,6 @@ easysearch:core@2.0.9
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
 ejson@1.0.7
-email@1.0.8
 es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
@@ -78,8 +77,6 @@ matdutour:popup-confirm@0.1.25
 matteodem:easy-search@2.0.0
 meteor@1.1.10
 meteor-base@1.0.1
-meteorhacks:kadira@2.28.5
-meteorhacks:meteorx@1.4.1
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1

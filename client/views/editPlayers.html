@@ -9,13 +9,9 @@
     <div class="row clearfix">
         <div class="col-md-12 column table-responsive">
              <form class="form-inline edit-fixture" id="edit-t1players">
-                <div class="form-group" id='addr0'>
-                        <input type="number" name='number'  placeholder='Number' class="form-control small-input"/>
-                        <input type="text" name='name' placeholder='Name' class="form-control"/>
-                        <input type="text" name='position' placeholder='Position' class="form-control"/>
-                        <input type="number" name='age' placeholder='Age' class="form-control small-input"/>
-                        <input type="text" name='height' placeholder='Height' class="form-control "/>
-                </div>
+                {{#each t1players}}
+                 {{> editPlayer}}
+                {{/each}}
                      <div class="form-group" id='addr1'></div><br>
             </form>
         </div>
@@ -31,13 +27,9 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <form class="form-inline edit-fixture" id="edit-t2players">
-                <div class="form-group" id='t2addr0'>
-                        <input type="number" name='number'  placeholder='Number' class="form-control small-input"/>
-                        <input type="text" name='name' placeholder='Name' class="form-control"/>
-                        <input type="text" name='position' placeholder='Position' class="form-control"/>
-                        <input type="number" name='age' placeholder='Age' class="form-control small-input"/>
-                        <input type="text" name='height' placeholder='Height' class="form-control "/>
-                </div>
+                {{#each t2players}}
+                 {{> editPlayer}}
+                {{/each}}
                      <div class="form-group" id='t2addr1'></div><br>
             </form>
         </div>
