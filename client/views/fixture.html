@@ -14,8 +14,58 @@
      <br> Time: {{time}}
      <br> <br> {{info}}
       <br><br>
-      {{team1}} Players = {{t1players}}
 
+      <div class="row">
+
+      <div class="col-md-6"  style="padding-right:20px; border-right: 1px solid #ccc;">
+      <b>{{team1}} Players</b>
+      <div class="table-responsive">
+      <table class="table">
+       <thead>
+        <tr align="center">
+           <th>number</th> 
+           <th>name</th> 
+           <th>position</th> 
+           <th>age</th> 
+           <th>height</th>
+        </tr>
+       </thead>
+       <tbody>
+        {{#each t1players}}
+          {{> player}}
+       {{/each}}
+       </tbody>
+      </table>
+      </div>
+      </div>
+
+      <div class="col-md-6">
+      <b>{{team2}} Players</b>
+      <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr align="center">
+           <th>number</th> 
+           <th>name</th> 
+           <th>position</th> 
+           <th>age</th> 
+           <th>height</th>
+        </tr>
+       </thead>
+      <tbody>
+        {{#each t2players}}
+          {{> player}}
+       {{/each}}
+      </tbody>
+      </table>
+      </div>
+      </div>
+
+      </div>
+
+ <br>
+ <hr>
+ <br>
       {{>comments}}
       {{>addComment}}
    <!-- {{>venueWeather}} -->

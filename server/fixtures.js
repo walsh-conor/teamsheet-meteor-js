@@ -23,16 +23,6 @@ if (Fixtures.find().count() === 0) {
     }
 
     var comments = [
-      {
-        commentOwner: 'Conor Walsh',
-        commentText: 'Going to be a great game',
-        commentDate: '12/03/2016'
-      },
-      {
-        commentOwner: 'Niamh Kelly',
-        commentText: 'Yes it is!',
-        commentDate: '13/03/2016'
-      }
       ];
  
     Fixtures.insert({
@@ -66,15 +56,6 @@ if (Fixtures.find().count() === 0) {
     }
 
       Fixtures.update(fixtureId, {$set: {team1: team1, team2: team2, venue: venue, date: date, time: time, info: info} });
-    
-  },
-  editPlayers: function (fixtureId, t1players, t2players) {
-    // Make sure the user is logged in before inserting a task
-    if (! Meteor.userId()) {
-      throw new Meteor.Error("not logged in");
-    }
-
-      Fixtures.update(fixtureId, {$set: {t1players: t1players, t2players: t2players} });
     
   }
 });

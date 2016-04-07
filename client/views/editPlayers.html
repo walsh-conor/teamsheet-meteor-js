@@ -1,103 +1,45 @@
 <template name="editPlayers">
   <h2 class="text-center">Edit Players</h2>
+<p class="text-center"><b>{{team1}}</b> V <b>{{team2}}</b> <br> {{venue}}, {{date}}, {{time}}</p>
 
-<h3>Home Team Players</h3>
+
+
+<h3>{{team1}} Players</h3>
  <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column table-responsive">
-            <table class="table table-bordered table-hover" id="edit-t1players">
-                <thead>
-                    <tr >
-                        <th class="text-center">
-                            #
-                        </th>
-                        <th class="text-center">
-                            Name
-                        </th>
-                        <th class="text-center">
-                            Position
-                        </th>
-                        <th class="text-center">
-                            Age
-                        </th>
-                        <th class="text-center">
-                            Height
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id='addr0'>
-                        <td>
-                        <input type="number" name='number'  placeholder='Number' class="form-control"/>
-                        </td>
-                        <td>
+             <form class="form-inline edit-fixture" id="edit-t1players">
+                <div class="form-group" id='addr0'>
+                        <input type="number" name='number'  placeholder='Number' class="form-control small-input"/>
                         <input type="text" name='name' placeholder='Name' class="form-control"/>
-                        </td>
-                        <td>
                         <input type="text" name='position' placeholder='Position' class="form-control"/>
-                        </td>
-                        <td>
-                        <input type="number" name='age' placeholder='Age' class="form-control"/>
-                        </td>
-                        <td>
-                        <input type="text" name='height' placeholder='Height' class="form-control"/>
-                        </td>
-                    </tr>
-                    <tr id='addr1'></tr>
-                </tbody>
-            </table>
+                        <input type="number" name='age' placeholder='Age' class="form-control small-input"/>
+                        <input type="text" name='height' placeholder='Height' class="form-control "/>
+                </div>
+                     <div class="form-group" id='addr1'></div><br>
+            </form>
         </div>
     </div>
     <a id="t1_add_row" class="btn btn-default pull-left">Add Row</a>
     <a id='t1_delete_row' class="pull-left btn btn-default">Delete Row</a>
 </div>
 
+<br>
 
-<h3>Away Team Players</h3>
+<h3>{{team2}} Players</h3>
  <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <table class="table table-bordered table-hover" id="edit-t2players">
-                <thead>
-                    <tr >
-                        <th class="text-center">
-                            #
-                        </th>
-                        <th class="text-center">
-                            Name
-                        </th>
-                        <th class="text-center">
-                            Position
-                        </th>
-                        <th class="text-center">
-                            Age
-                        </th>
-                        <th class="text-center">
-                            Height
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id='t2addr0'>
-                        <td>
-                        <input type="number" name='number'  placeholder='Number' class="form-control"/>
-                        </td>
-                        <td>
-                        <input type="text" name='name' placeholder='name' class="form-control"/>
-                        </td>
-                        <td>
+            <form class="form-inline edit-fixture" id="edit-t2players">
+                <div class="form-group" id='t2addr0'>
+                        <input type="number" name='number'  placeholder='Number' class="form-control small-input"/>
+                        <input type="text" name='name' placeholder='Name' class="form-control"/>
                         <input type="text" name='position' placeholder='Position' class="form-control"/>
-                        </td>
-                        <td>
-                        <input type="number" name='age' placeholder='Age' class="form-control"/>
-                        </td>
-                        <td>
-                        <input type="text" name='height' placeholder='Height' class="form-control"/>
-                        </td>
-                    </tr>
-                    <tr id='addr1'></tr>
-                </tbody>
-            </table>
+                        <input type="number" name='age' placeholder='Age' class="form-control small-input"/>
+                        <input type="text" name='height' placeholder='Height' class="form-control "/>
+                </div>
+                     <div class="form-group" id='t2addr1'></div><br>
+            </form>
         </div>
     </div>
     <a id="t2_add_row" class="btn btn-default pull-left">Add Row</a>

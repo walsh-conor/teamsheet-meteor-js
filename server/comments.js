@@ -8,6 +8,7 @@
    Fixtures.update(fixtureId, 
                {$push: {comments: {
                                    commentOwner: Meteor.user().services.twitter.screenName,
+                                   commentOwnerImage: Meteor.user().services.twitter.profile_image_url,
                                    commentText: commentText,
                                    createdAt: new Date()
                                   }

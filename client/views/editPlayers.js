@@ -2,9 +2,8 @@
  var j=1;
 Template.editPlayers.events({
   "click #t1_add_row":function(event, template){
-     template.$('#addr'+i).html("<td><input name='number' type='number' placeholder='Number' required class='form-control input-md'  /></td><td><input required name='name' type='text' placeholder='Name'  class='form-control input-md'></td><td><input  name='position' type='text' placeholder='Position'  class='form-control input-md'></td><td><input  name='age' type='number' placeholder='Age'  class='form-control input-md'></td><td><input name='height' type='text' placeholder='Height' class='form-control input-md'  /></td>");
-
-      template.$('#edit-t1players').append('<tr id="addr'+(i+1)+'"></tr>');
+     template.$('#addr'+i).html("<input type='number' name='number'  placeholder='Number' class='form-control small-input'/> <input type='text' name='name' placeholder='Name' class='form-control'/> <input type='text' name='position' placeholder='Position' class='form-control'/> <input type='number' name='age' placeholder='Age' class='form-control small-input'/> <input type='text' name='height' placeholder='Height' class='form-control'/>");
+      template.$('#edit-t1players').append(' <div class="form-group" id="addr'+(i+1)+'"></div><br>');
       i++; 
   },
   "click #t1_delete_row":function(event, template){
@@ -14,9 +13,9 @@ Template.editPlayers.events({
          }
   },
   "click #t2_add_row":function(event, template){
-     template.$('#t2addr'+j).html("<td><input name='number' type='number' placeholder='Number' required class='form-control input-md'  /></td><td><input required name='name' type='text' placeholder='Name'  class='form-control input-md'></td><td><input  name='position' type='text' placeholder='Position'  class='form-control input-md'></td><td><input  name='age' type='number' placeholder='Age'  class='form-control input-md'></td><td><input name='height' type='text' placeholder='Height' class='form-control input-md'  /></td>");
+     template.$('#t2addr'+j).html("<input type='number' name='number'  placeholder='Number' class='form-control small-input'/> <input type='text' name='name' placeholder='Name' class='form-control'/> <input type='text' name='position' placeholder='Position' class='form-control'/> <input type='number' name='age' placeholder='Age' class='form-control small-input'/> <input type='text' name='height' placeholder='Height' class='form-control'/>");
 
-      template.$('#edit-t2players').append('<tr id="t2addr'+(j+1)+'"></tr>');
+      template.$('#edit-t2players').append('<div class="form-group" id="t2addr'+(j+1)+'"></div><br>');
       j++; 
   },
   "click #t2_delete_row":function(event, template){
@@ -27,34 +26,39 @@ Template.editPlayers.events({
   },
    "click #save-players": function (event, template) {
      
-       var data = template.$('#edit-t1players tr:has(td)').map(function(index) {
-        var $td =  $('td', this);
-        console.log($td);
+       var t1data = template.$('#edit-t1players div:has(input)').map(function(index) {
+        var $input =  $('input', this);
                 return {
                          id: ++i,
-                         number: $td.eq(0).val(),
-                         name: $td.eq(0).val(),
-                         position: $td.eq(2).text(),
-                         age: $td.eq(3).text() ,
-                         height: $td.eq(4).text()             
+                         number: $input.eq(0).val(),
+                         name: $input.eq(1).val(),
+                         position: $input.eq(2).val(),
+                         age: $input.eq(3).val() ,
+                         height: $input.eq(4).val()             
                        }
         }).get();
 
-         console.log(data);
+         console.log(t1data);
 
-         var tbl2 = $('#edit-t2players tr:has(td)').map(function(i, v) {
-            var $td =  $('td', this);
+         var t2data = $('#edit-t2players div:has(input)').map(function(i, v) {
+            var $input =  $('input', this);
                 return {
                          id: ++i,
-                         number: $td.eq(0).text(),
-                         name: $td.eq(1).text(),
-                         position: $td.eq(2).text(),
-                         age: $td.eq(3).text() ,
-                         height: $td.eq(4).text()             
+                         number: $input.eq(0).val(),
+                         name: $input.eq(1).val(),
+                         position: $input.eq(2).val(),
+                         age: $input.eq(3).val() ,
+                         height: $input.eq(4).val()             
                        }
         }).get();
 
-         console.log(tbl2);
+         console.log(t2data);
+
+
+       var fixtureid = this._id; //id of fixture to add players to
+
+       Meteor.call("editPlayers", fixtureid, t1data, t2data);
+       Router.go('fixtures');
     }
 });
 

@@ -1,5 +1,9 @@
 <template name="comment">
-  <li>
-     <b>{{commentOwner}}</b>: {{commentText}}
-  </li>
+  <div class="comment row">
+          <div class="image"><img class="img-rounded" src={{commentOwnerImage}} alt='profile image' width="40" height="40"> </div>
+          <div class="user">{{commentOwner}}</div>
+          <div style="clear:both;"></div>
+          <div class="content">{{commentText}}</div>
+     <hr>
+    </div>
 </template>

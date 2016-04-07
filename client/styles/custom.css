@@ -14,3 +14,30 @@ body {
   height: 60px;
   background-color: #f5f5f5;
 }
+
+.small-input {
+   max-width: 90px;
+}
+
+ .comment {
+    margin-bottom: 10px; 
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .image {
+    float:left; 
+    margin-right: 10px; 
+  }
+
+.user {
+   float:left; 
+   font-weight:bold; 
+   color:#006767; 
+   margin-bottom: 5px; 
+ }
+
+.content { 
+   margin-left: 60px;
+   font-style:italic; 
+   color:black; 
+ }
