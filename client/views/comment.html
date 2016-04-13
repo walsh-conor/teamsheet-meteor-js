@@ -4,6 +4,16 @@
           <div class="user">{{commentOwner}}</div>
           <div style="clear:both;"></div>
           <div class="content">{{commentText}}</div>
+          {{#if searching fileType}}
+              <video width="400" controls>
+                <source src={{imageURL}} type="video/mp4">
+                <source src={{imageURL}} type="video/ogg">
+                Your browser does not support HTML5 video.
+              </video>
+            {{else}}
+              <img src={{imageURL}} alt="image">
+          {{/if}}
+             
      <hr>
     </div>
 </template>
