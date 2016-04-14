@@ -31,7 +31,7 @@ Template.addComment.events({
        var fileType =  'no image';
 
       // Insert a fixture into the collection
-       Meteor.call("addComment",fixtureCommentedOn, commentText, imagesURL);
+       Meteor.call("addComment",fixtureCommentedOn, commentText, imagesURL, fileType);
       }
 
  

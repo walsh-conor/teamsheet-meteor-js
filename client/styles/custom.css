@@ -41,3 +41,12 @@ body {
    font-style:italic; 
    color:black; 
  }
+
+ .navbar-right { 
+   padding-right: 100px;
+ }
+
+ .navleft { 
+   padding-left: 100px;
+ }
+

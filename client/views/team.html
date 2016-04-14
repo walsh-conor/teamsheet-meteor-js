@@ -1,6 +1,10 @@
 <template name="tsUser">
   <li>
-     <a href="/user/{{_id}}"><img src={{services.twitter.profile_image_url}} alt='profile image'> <b>{{services.twitter.screenName}}</b></a>
+  	{{#if services.twitter.profile_image_url}}
+       <a href="/user/{{_id}}"><img src={{services.twitter.profile_image_url}} alt='profile image'> <b>{{services.twitter.screenName}}</b></a>
+     {{else}}
+     <a href="/user/{{_id}}"><img src='/images/photo.png' alt='profile image' width="45" height="45"> <b>{{emails.[0].address}}</b></a>
+    {{/if}}
      <br>
      <br>
   </li>
@@ -8,8 +12,12 @@
 
 
 <template name="oneUser">
+{{#if services.twitter.profile_image_url}}
 <h1><img src={{services.twitter.profile_image_url}} alt='profile image'> {{services.twitter.screenName}} </h1>
  Name :  <b>{{profile.name}}</b>
+{{else}}
+<h1><img src='/images/photo.png' alt='profile image' width="45" height="45"> {{emails.[0].address}} </h1>
+{{/if}}
 
   
 </template>

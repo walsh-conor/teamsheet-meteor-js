@@ -38,21 +38,26 @@ if (Fixtures.find().count() === 0) {
         t1players: t1players,
         t2players: t2players,
         createdAt: new Date(), // current time
-        owner: Meteor.userId(),           // _id of logged in user
-        username: Meteor.user().username  // username of logged in user
+        owner: Meteor.userId()         // _id of logged in user
       });
   },
-  deleteFixture: function (fixtureId) {
+  deleteFixture: function (fixtureId, owner) {
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error("not logged in");
     }
+    if (Meteor.userId() != owner) {
+      throw new Meteor.Error("you do not have pemission to delete this fixture");
+    }
     Fixtures.remove(fixtureId);
   },
-  editFixture: function (fixtureId, team1, team2, venue, date, time, info) {
+  editFixture: function (fixtureId, team1, team2, venue, date, time, info, owner) {
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error("not logged in");
+    }
+    if (Meteor.userId() != owner) {
+      throw new Meteor.Error("you do not have pemission to delete this fixture");
     }
 
       Fixtures.update(fixtureId, {$set: {team1: team1, team2: team2, venue: venue, date: date, time: time, info: info} });

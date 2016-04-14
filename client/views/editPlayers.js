@@ -2,7 +2,7 @@
  var j=1;
 Template.editPlayers.events({
   "click #t1_add_row":function(event, template){
-     template.$('#addr'+i).html("<input type='number' name='number'  placeholder='Number' class='form-control small-input'/> <input type='text' name='name' placeholder='Name' class='form-control'/> <input type='text' name='position' placeholder='Position' class='form-control'/> <input type='number' name='age' placeholder='Age' class='form-control small-input'/> <input type='text' name='height' placeholder='Height' class='form-control'/>");
+     template.$('#addr'+i).html("<input type='number' min='1' name='number'  placeholder='Number' class='form-control small-input'/> <input type='text' name='name' placeholder='Name' class='form-control'/> <input type='text' name='position' placeholder='Position' class='form-control'/> <input type='number' name='age' min='0' placeholder='Age' class='form-control small-input'/> <input type='text' name='height' placeholder='Height' class='form-control'/>");
       template.$('#edit-t1players').append(' <div class="form-group" id="addr'+(i+1)+'"></div><br>');
       i++; 
   },

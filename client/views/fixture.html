@@ -67,7 +67,9 @@
  <hr>
  <br>
       {{>comments}}
-      {{>addComment}}
+      {{#if currentUser}}
+         {{>addComment}}
+      {{/if}}
    <!-- {{>venueWeather}} -->
   
 </template>

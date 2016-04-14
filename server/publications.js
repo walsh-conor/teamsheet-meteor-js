@@ -1,10 +1,10 @@
 Meteor.publish('fixtures', function() {
   return Fixtures.find({}, {sort: {date: 1}});
 });
-// Meteor.publish('fixtures', function() {
-//   return Fixtures.find({createdAt: {$gt: new Date(now) }}, {sort: {date: 1}});
-// });
 
+// Meteor.publish('fixtures', function() {
+//   return Fixtures.find({date: {$gt: modifiedDate }}, {sort: {date: 1}});
+// });
 
 Meteor.publish('tsUsers', function() {
   return Meteor.users.find({});

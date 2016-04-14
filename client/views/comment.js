@@ -8,6 +8,13 @@ Template.comment.helpers({
         }
   },
   isOwner: function() {
-    return this.commentOwner == Meteor.user().services.twitter.screenName;
+    var owner = null;
+    if(Meteor.user().services.twitter){
+            owner = Meteor.user().services.twitter.screenName;
+        }
+    else {
+         owner =  Meteor.user().emails[0].address;
+      }
+    return this.commentOwner == owner 
   }
 });

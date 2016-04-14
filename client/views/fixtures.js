@@ -1,5 +1,13 @@
 Template.fixtures.helpers({
-  fixtures: Fixtures.find()
+  fixtures: function () {
+    // var today = new Date();
+    // var dd = today.getDate();
+    // var mm = today.getMonth()+1; //January is 0!
+    // var yyyy = today.getFullYear();
+    // var todaysDate = ''+ yyyy +'-'+ mm + '-'+dd +'';
+    // console.log('now date = ' + todaysDate)
+    return Fixtures.find()
+  }
 });
 
 Template.addFixture.events({
@@ -35,6 +43,7 @@ Template.addFixture.events({
   Template.myFixture.events({
    "click .delete": function () {
     fixtureToDelete = this._id;
+    fixtureOwner = this.owner;
     new Confirmation({
         message: "Are you sure?",
         title: "Delete This Fixture",
@@ -44,7 +53,7 @@ Template.addFixture.events({
       }, function (ok) {
          if(ok)
          {
-          Meteor.call("deleteFixture", fixtureToDelete);
+          Meteor.call("deleteFixture", fixtureToDelete, fixtureOwner);
           Router.go('myFixtures');
          }
       });      
@@ -57,6 +66,7 @@ Template.editFixture.events({
       // Prevent default browser form submit
       event.preventDefault();
       fixtureToEdit = this._id;
+      fixtureOwner = this.owner;
       // Get value from form element
       var team1 = event.target.team1.value;
       var team2 = event.target.team2.value;
@@ -66,7 +76,7 @@ Template.editFixture.events({
       var info = event.target.info.value;
 
     // Insert a coffee into the collection
-     Meteor.call("editFixture", fixtureToEdit, team1, team2, venue, date, time, info);
+     Meteor.call("editFixture", fixtureToEdit, team1, team2, venue, date, time, info, fixtureOwner);
       
       // Clear form
       event.target.team1.value = "";

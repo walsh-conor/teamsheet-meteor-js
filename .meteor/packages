@@ -24,7 +24,7 @@ cfs:gridfs
 cfs:standard-packages
 matdutour:popup-confirm
 twbs:bootstrap
-alanning:roles
 matteodem:easy-search
 sanjo:jasmine
 velocity:html-reporter
+accounts-password
