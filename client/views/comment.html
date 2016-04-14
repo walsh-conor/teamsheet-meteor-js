@@ -1,7 +1,7 @@
 <template name="comment">
-  <div class="comment row">
+  <div class="comment row"> 
           <div class="image"><img class="img-rounded" src={{commentOwnerImage}} alt='profile image' width="40" height="40"> </div>
-          <div class="user">{{commentOwner}}</div>
+          <div class="user">{{commentOwner}}</div>    
           <div style="clear:both;"></div>
           <div class="content">{{commentText}}</div>
           {{#if searching fileType}}
@@ -13,7 +13,11 @@
             {{else}}
               <img src={{imageURL}} alt="image">
           {{/if}}
-             
+          <div style="clear:both;"></div>
+          <br>
+          {{#if isOwner}}
+             <a href="#"><button class="deletecomment">&times; Remove</button></a> 
+          {{/if}}
      <hr>
     </div>
 </template>

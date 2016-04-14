@@ -25,3 +25,4 @@ App.launchScreens({
   'android_xhdpi_portrait': 'resources/splash/ts-logo-72.png',
   'android_xhdpi_landscape': 'resources/splash/ts-logo-72.png'
 });
+

@@ -6,5 +6,8 @@ Template.comment.helpers({
         else if (type.indexOf('video') > -1) {
         		return true
         }
+  },
+  isOwner: function() {
+    return this.commentOwner == Meteor.user().services.twitter.screenName;
   }
 });

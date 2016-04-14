@@ -34,19 +34,32 @@ Template.addComment.events({
        Meteor.call("addComment",fixtureCommentedOn, commentText, imagesURL);
       }
 
-      // FS.Utility.eachFile(event, function(file) {
-      //   Images.insert(file, function (err, fileObj) {
-      //     if (err){          } else {
-      //       var imagesURL = { "profile.image": "/cfs/files/images/" + fileObj._id };
-      //     }
-      //     })
-      //      });
-
-
  
       // Clear form
   	  event.target.commentText.value = "";
     }
   });
 
- 
+
+  Template.comment.events({
+   "click .deletecomment": function () {
+    fixtureToEdit = this.fixtureId;
+    createdAt = this.createdAt;
+    commentOwner = this.commentOwner;
+    new Confirmation({
+        message: "Are you sure?",
+        title: "Delete This Comment",
+        cancelText: "Cancel",
+        okText: "Delete",
+        success: true // wether the button should be green or red
+      }, function (ok) {
+         if(ok)
+         {
+          console.log('fixtureToEdit = ' + fixtureToEdit);
+          console.log('createdAt = ' + createdAt);
+          console.log('commentOwner = ' + commentOwner);
+          Meteor.call("deleteComment", fixtureToEdit, createdAt, commentOwner);
+         }
+      });      
+    }
+  });

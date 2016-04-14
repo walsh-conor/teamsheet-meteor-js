@@ -12,14 +12,29 @@
                                    commentText: commentText,
                                    imageURL: imageURL,
                                    fileType: fileType,
-                                   createdAt: new Date()
+                                   createdAt: new Date(),
+                                   fixtureId: fixtureId
                                   }
                         } 
                 });
- 
 
- 
+  },
+  deleteComment: function (fixtureId,createdAt, commentOwner) {
 
+
+    console.log('deleteComment called ');
+
+    // Make sure the user is logged in before inserting a task
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not logged in");
+    }
+
+   Fixtures.update(fixtureId, 
+               {$pull: {comments: {
+                                   createdAt: createdAt
+                                  }
+                        } 
+                });
   }
 });
 
