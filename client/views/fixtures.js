@@ -10,6 +10,12 @@ Template.fixtures.helpers({
   }
 });
 
+Template.searchBox.helpers({
+  fixturesIndex: () => FixturesIndex
+});
+
+
+
 Template.addFixture.events({
     "submit .new-fixture": function (event) {
       // Prevent default browser form submit

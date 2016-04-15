@@ -15,6 +15,6 @@ Meteor.publish('tsUsers', function() {
 //    return Fixtures.find({owner: this.userId}, {sort: {date: 1}});
 //  });
 
-//  Meteor.publish('fixtures-by-user', function publishFunction(someUser) {
-//    return Fixtures.find({owner: someUser._id}, {sort: {date: -1}});
-//  });
+ // Meteor.publish('userFixtures', function publishFunction(someUser) {
+ //   return Fixtures.find({owner: someUser._id}, {sort: {date: -1}});
+ // });

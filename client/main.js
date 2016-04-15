@@ -5,4 +5,4 @@ Meteor.subscribe('myFixtures');
 Meteor.subscribe('tsUsers');
 
 
-// Meteor.subscribe('fixtures-by-user', someUser);
+// Meteor.subscribe('userFixtures', someUser);

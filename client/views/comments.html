@@ -10,9 +10,13 @@
 </template>
 
 <template name="addComment">
- <form class="form-inline new-comment">
-        <input type="text" name="commentText" placeholder="Enter the Comment...." required />
-		<input type="file" name="fileInput" id="fileInput" class="myFileInput">
-		<button><input type="submit" value="submit"></button>
+ <form class="form-horizontal new-comment">
+        <label for="commentText">Enter Comment: </label>
+        <input type="text" class="form-control" name="commentText" id="commentText" placeholder="Enter a Comment..." required />
+        <br>
+		<label for="fileInput">Upload a file: </label>
+		<input type="file" class="myFileInput" name="fileInput" id="fileInput">
+		<br>
+		<button type="submit" class="btn btn-primary">Submit</button>
       </form>
 </template>

@@ -1,18 +1,18 @@
-if (Fixtures.find().count() === 0) {
-  fixture = {
-    team1: 'Clonea',
-    team2: 'Portlaw',
-    venue: 'Tramore',
-    date: '01/04/2015',
-    time: '21.30',
-    t1score: '--.--',
-    t2score: '--.--',
-    info: 'Intermediate Semi-Final',
-    t1players:[],
-    t2players:[]
-  };
-  Fixtures.insert(fixture);
-}
+// if (Fixtures.find().count() === 0) {
+//   fixture = {
+//     team1: 'Clonea',
+//     team2: 'Portlaw',
+//     venue: 'Tramore',
+//     date: '01/04/2015',
+//     time: '21.30',
+//     t1score: '--.--',
+//     t2score: '--.--',
+//     info: 'Intermediate Semi-Final',
+//     t1players:[],
+//     t2players:[]
+//   };
+//   Fixtures.insert(fixture);
+// }
 
 
  Meteor.methods({

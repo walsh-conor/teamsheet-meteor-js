@@ -1,0 +1,21 @@
+<template name="searchBox">
+   Search Fixtures: {{> EasySearch.Input index=fixturesIndex placeholder="Search..." }}
+    <br>
+	<br>
+    <ul>
+        {{#EasySearch.Each index=fixturesIndex }}
+            {{> fixture}}
+        {{/EasySearch.Each}}
+    </ul>
+</template>
+
+<template name="searchUsers">
+   Search Users: {{> EasySearch.Input index=usersIndex placeholder="Search..." }}
+    <br>
+	<br>
+    <div class="row">
+        {{#EasySearch.Each index=usersIndex }}
+            {{> tsUser}}
+        {{/EasySearch.Each}}
+    </div>
+</template>

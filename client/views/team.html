@@ -1,23 +1,25 @@
 <template name="tsUser">
-  <li>
+  <div class="col-md-6">
   	{{#if services.twitter.profile_image_url}}
        <a href="/user/{{_id}}"><img src={{services.twitter.profile_image_url}} alt='profile image'> <b>{{services.twitter.screenName}}</b></a>
      {{else}}
-     <a href="/user/{{_id}}"><img src='/images/photo.png' alt='profile image' width="45" height="45"> <b>{{emails.[0].address}}</b></a>
+     <a href="/user/{{_id}}"><img src='/images/photo.png' alt='profile image' width="45" height="45"> <b>{{username}}</b></a>
     {{/if}}
      <br>
      <br>
-  </li>
+  </div>
 </template>
 
 
 <template name="oneUser">
 {{#if services.twitter.profile_image_url}}
-<h1><img src={{services.twitter.profile_image_url}} alt='profile image'> {{services.twitter.screenName}} </h1>
- Name :  <b>{{profile.name}}</b>
+<h2><img src={{services.twitter.profile_image_url}} alt='profile image'> {{services.twitter.screenName}} </h2>
 {{else}}
-<h1><img src='/images/photo.png' alt='profile image' width="45" height="45"> {{emails.[0].address}} </h1>
+<h2><img src='/images/photo.png' alt='profile image' width="45" height="45"> {{username}} </h2>
 {{/if}}
 
+    {{#each userFixtures}}
+      {{> fixture}}
+    {{/each}}
   
 </template>
