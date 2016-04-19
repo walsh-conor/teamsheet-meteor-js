@@ -19,6 +19,8 @@ Template.addComment.events({
 
                     // Insert a fixture into the collection
                      Meteor.call("addComment",fixtureCommentedOn, commentText, imagesURL,fileType);
+
+                      Router.go('fixture/' + fixtureCommentedOn);
                     
                    }else{ 
                       console.log('error getting file');

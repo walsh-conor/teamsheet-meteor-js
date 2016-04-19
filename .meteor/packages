@@ -25,6 +25,5 @@ cfs:standard-packages
 matdutour:popup-confirm
 twbs:bootstrap
 matteodem:easy-search
-sanjo:jasmine
-velocity:html-reporter
 accounts-password
+sanjo:jasmine

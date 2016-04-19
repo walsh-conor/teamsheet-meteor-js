@@ -1,0 +1,32 @@
+it("should not be possible to register while at maximum capacity", function() {
+    var tutorial = new Tutorial(1, "Name", 5, 5);
+ 
+    expect(function() { tutorial.registerStudent(1); }).toThrow("Capacity of the tutorial has been reached!");
+});
+ 
+it("should not be possible to register if registration is present", function() {
+    spyOn(TutorialRegistrations, "findOne").and.returnValue({});
+ 
+    var tutorial = new Tutorial(1, "Name", 5, 4);
+    expect(function() { tutorial.registerStudent(1); }).toThrow("Student already registered!");
+});
+ 
+ 
+it("should not be possible to de-register if registration not present", function() {
+    spyOn(TutorialRegistrations, "findOne").and.returnValue();
+    var tutorial = new Tutorial(1, "Name", 5, 4);
+    expect(function() { tutorial.removeRegistration(1); }).toThrow("Student not registered!");
+});
+ 
+it("should be possible to de-register if registration exists", function() {
+    spyOn(TutorialRegistrations, "findOne").and.returnValue({});
+    var tutorial = new Tutorial("1", "Name", 5, 4);
+ 
+    spyOn(TutorialRegistrations, "remove");
+    spyOn(Tutorials, "update");
+ 
+    tutorial.removeRegistration("2");
+ 
+    expect(TutorialRegistrations.remove).toHaveBeenCalledWith({tutorialId: "1", userId: "2"});
+    expect(Tutorials.update).toHaveBeenCalledWith({_id: "1"}, {$inc: {currentCapacity : -1}});
+});

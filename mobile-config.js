@@ -16,13 +16,13 @@ App.icons({
 });
 
 App.launchScreens({
-  'android_ldpi_portrait': 'resources/splash/ts-logo-72.png',
-  'android_ldpi_landscape': 'resources/splash/ts-logo-72.png',
-  'android_mdpi_portrait': 'resources/splash/ts-logo-72.png',
-  'android_mdpi_landscape': 'resources/splash/ts-logo-72.png',
-  'android_hdpi_portrait': 'resources/splash/ts-logo-72.png',
-  'android_hdpi_landscape': 'resources/splash/ts-logo-72.png',
-  'android_xhdpi_portrait': 'resources/splash/ts-logo-72.png',
-  'android_xhdpi_landscape': 'resources/splash/ts-logo-72.png'
+  'android_ldpi_portrait': 'resources/splash/Drawing.png',
+  'android_ldpi_landscape': 'resources/splash/Drawing.png',
+  'android_mdpi_portrait': 'resources/splash/Drawing.png',
+  'android_mdpi_landscape': 'resources/splash/Drawing.png',
+  'android_hdpi_portrait': 'resources/splash/Drawing.png',
+  'android_hdpi_landscape': 'resources/splash/Drawing.png',
+  'android_xhdpi_portrait': 'resources/splash/Drawing.png',
+  'android_xhdpi_landscape': 'resources/splash/Drawing.png'
 });
 
