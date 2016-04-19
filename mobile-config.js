@@ -26,3 +26,4 @@ App.launchScreens({
   'android_xhdpi_landscape': 'resources/splash/Drawing.png'
 });
 
+App.accessRule('*');
